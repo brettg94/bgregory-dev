@@ -1,0 +1,17 @@
+{
+  "name": "bgregory-dev",
+  "version": "1.0.0",
+  "description": "Brett's resume website",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": "^14.0.0",
+    "npm": "3.10.10"
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "main": "index.js",
+  "author": "brettg94 <brettg94dev@outlook.com>",
+  "license": "MIT"
+}
