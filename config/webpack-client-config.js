@@ -7,6 +7,7 @@ const ROOT_DIR = path.resolve(__dirname, '../')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const config = {
   mode: process.env.NODE_ENV,
@@ -39,8 +40,10 @@ const config = {
   resolve: {
     extensions: ['.mjs', '.cjs', '.web.js', '.ts', '.tsx', '.js', '.scss'],
     modules: ['node_modules'],
-    plugins: [],
-    alias: {}
+    plugins: [new TsconfigPathsPlugin()],
+    alias: {
+      constants$: APP_DIR + '/styles/constants.scss'
+    }
   },
   module: {
     rules: [

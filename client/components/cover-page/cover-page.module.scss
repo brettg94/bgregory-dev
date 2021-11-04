@@ -1,0 +1,28 @@
+@import '~constants';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #13133c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagline {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding-right: 16px;
+  border-right: 1px solid white;
+}
+
+.jobTitle {
+  text-transform: uppercase;
+  color: $white-text;
+}
+
+.blurb {
+  color: $white-text-muted;
+}
