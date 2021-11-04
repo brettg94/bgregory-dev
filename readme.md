@@ -13,3 +13,14 @@ There's also a neat integration made with Contentful, which is the CMS that host
 There's a small AWS component that utilizes CloudFront as a CDN for static assets (JS/CSS).
 
 WIP
+
+## .env Requirements
+
+```
+NODE_ENV=[node env here, "production" or "development"]
+CONTENTFUL_SPACE_ID=[space id here]
+CONTENTFUL_ACCESS_TOKEN=[access token here]
+CONTENTFUL_PREVIEW_ACCESS_TOKEN=[preview access token here (optional)]
+CONTENTFUL_USE_PREVIEW_API=[true or false]
+CONTENTFUL_ENVIRONMENT=[environment name here (probably "master")]
+```

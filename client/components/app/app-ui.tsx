@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { CoverPage } from '../cover-page/cover-page-ui'
+import { CoverPage } from '../cover-page/cover-page-container'
 import styles from './app.module.scss'
 import { ThemeProvider } from '@mui/system'
 import { MUI_THEME } from '@Client/styles/mui-styles'

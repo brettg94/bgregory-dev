@@ -4,6 +4,8 @@ import express from 'express'
 import glob from 'glob'
 import path from 'path'
 import { ServerEnvironmentConfig } from './config'
+import { contentRouter } from './controller/content/content-controller'
+import { CONTENT_ENDPOINT } from './endpoints'
 
 const app = express()
 const router = express.Router()
@@ -33,6 +35,7 @@ export function startServer(config: ServerEnvironmentConfig) {
     })
   })
 
+  app.use(`${CONTENT_ENDPOINT}`, contentRouter)
   app.use('/', router)
 
   return app.listen(port, () => {

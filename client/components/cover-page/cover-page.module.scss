@@ -3,7 +3,7 @@
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: #13133c;
+  background-color: $default-background-color;
   color: white;
   display: flex;
   justify-content: center;
@@ -25,4 +25,8 @@
 
 .blurb {
   color: $white-text-muted;
+}
+
+.logoImage {
+  max-width: 30vw;
 }
