@@ -6,7 +6,7 @@ const APP_DIR = path.resolve(__dirname, '../client')
 const ROOT_DIR = path.resolve(__dirname, '../')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const config = {
   mode: process.env.NODE_ENV,
@@ -16,7 +16,7 @@ const config = {
   optimization: {
     minimize: process.env.NODE_ENV === 'production',
     usedExports: true,
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin()],
     splitChunks: {
       chunks: 'async'
     }
