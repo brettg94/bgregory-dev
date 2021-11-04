@@ -1,4 +1,6 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import { App } from './components/app/app-ui'
+import './styles/global.scss'
 
-render(<h1>Hello world!</h1>, document.getElementById('entry'))
+render(<App />, document.getElementById('entry'))

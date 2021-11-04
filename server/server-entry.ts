@@ -9,8 +9,8 @@ const app = express()
 const router = express.Router()
 
 export function startServer(config: ServerEnvironmentConfig) {
-  const JS_MAIN_FILENAME = glob.sync('main.*.js', { cwd: './dist/public/' })[0]
-  const CSS_MAIN_FILENAME = glob.sync('main.*.css', { cwd: './dist/public/' })[0]
+  const JS_MAIN_FILENAME = glob.sync('main.js', { cwd: './dist/public/' })[0]
+  const CSS_MAIN_FILENAME = glob.sync('main.css', { cwd: './dist/public/' })[0]
   const port = process.env.PORT ? Number(process.env.PORT) : 3000
   logFileLoadResult(JS_MAIN_FILENAME, 'JavaScript')
   logFileLoadResult(CSS_MAIN_FILENAME, 'CSS')

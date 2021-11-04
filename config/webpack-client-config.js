@@ -22,7 +22,7 @@ const config = {
     }
   },
   output: {
-    filename: `[name].[contenthash].js`,
+    filename: `[name].js`,
     chunkFilename: '[name]-[contenthash].js',
     path: BUILD_DIR,
     sourceMapFilename: '[name].js.map'
@@ -30,7 +30,7 @@ const config = {
   devtool: process.env.NODE_ENV !== 'production' ? 'cheap-source-map' : undefined,
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `[name].[contenthash].css`,
+      filename: `[name].css`,
       chunkFilename: '[name]-[contenthash].css',
       ignoreOrder: false
     }),
