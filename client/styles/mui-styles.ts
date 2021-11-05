@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material'
 
+//Configuration for Material-UI theme, as well as various overrides for specific components.
 export const MUI_THEME = createTheme({
   palette: {
     mode: 'dark',
@@ -12,5 +13,18 @@ export const MUI_THEME = createTheme({
   },
   typography: {
     fontFamily: 'Red Hat Text'
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          textDecoration: 'none',
+          fontWeight: 'bold'
+        }
+      },
+      defaultProps: {
+        color: '#FFFFFF'
+      }
+    }
   }
 })

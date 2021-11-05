@@ -37,7 +37,7 @@ export const CoverPageUI = React.memo((props: Props) => {
           I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any (?) you see to get design and implementation
           rationale for specific features.
         </p>
-        <Link color="secondary" href="https://github.com/brettg94/bgregory-dev" target="_blank">
+        <Link href="https://github.com/brettg94/bgregory-dev" target="_blank">
           Click here to view the source on GitHub.
         </Link>
         <ArrowDownwardIcon className={styles.arrowDownward} />

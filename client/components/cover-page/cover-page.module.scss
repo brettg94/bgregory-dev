@@ -104,6 +104,11 @@
   color: $white-text-muted;
 }
 
+.gitHubSourceLink {
+  color: white;
+  font-weight: bold;
+}
+
 .arrowDownward {
   color: white;
   margin-top: 24px;
@@ -112,25 +117,17 @@
 
 //https://codepen.io/nelledejones/pen/gOOPWrK
 @keyframes bounce {
-  70% {
-    transform: translateY(0%);
-  }
-  80% {
-    transform: translateY(-15%);
-  }
-  90% {
-    transform: translateY(0%);
-  }
-  95% {
-    transform: translateY(-7%);
-  }
-  97% {
-    transform: translateY(0%);
-  }
-  99% {
-    transform: translateY(-3%);
-  }
+  0%,
+  20%,
+  50%,
+  80%,
   100% {
     transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
