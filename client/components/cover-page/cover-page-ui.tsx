@@ -1,6 +1,7 @@
-import { Chip } from '@mui/material'
-import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
 import React from 'react'
+import { Chip, Link } from '@mui/material'
+import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import styles from './cover-page.module.scss'
 
 type Props = CoverPageType
@@ -30,6 +31,16 @@ export const CoverPageUI = React.memo((props: Props) => {
             ))}
           </div>
         </div>
+      </div>
+      <div className={styles.bottomDisclaimer}>
+        <p>
+          I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any (?) you see to get design and implementation
+          rationale for specific features.
+        </p>
+        <Link color="secondary" href="https://github.com/brettg94/bgregory-dev" target="_blank">
+          Click here to view the source on GitHub.
+        </Link>
+        <ArrowDownwardIcon className={styles.arrowDownward} />
       </div>
     </div>
   )
