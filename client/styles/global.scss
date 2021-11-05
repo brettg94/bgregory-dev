@@ -7,3 +7,13 @@ body {
   background-color: $default-background-color;
   font-family: 'Red Hat Text', sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fira Code', sans-serif;
+  font-weight: normal; //Fira looks better slimmed down
+}

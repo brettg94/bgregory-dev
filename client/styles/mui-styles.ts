@@ -9,5 +9,8 @@ export const MUI_THEME = createTheme({
     secondary: {
       main: '#a71cb2'
     }
+  },
+  typography: {
+    fontFamily: 'Red Hat Text'
   }
 })

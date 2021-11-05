@@ -10,12 +10,14 @@
   align-items: center;
 }
 
+.interior {
+  display: flex;
+}
+
 .tagline {
   display: flex;
   flex-direction: column;
   text-align: right;
-  padding-right: 16px;
-  border-right: 1px solid white;
 }
 
 .jobTitle {
@@ -28,5 +30,31 @@
 }
 
 .logoImage {
-  max-width: 30vw;
+  max-width: 500px;
+}
+
+.divider {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.496);
+  margin: 0px 24px;
+}
+
+.sectionTitle {
+  color: $white-text;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+.chipContainer {
+  margin-bottom: 24px;
+  & > *:first-child {
+    margin-right: 4px;
+  }
+  & > *:last-child {
+    margin-left: 4px;
+  }
+  & > *:not(:first-child):not(:last-child) {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
 }
