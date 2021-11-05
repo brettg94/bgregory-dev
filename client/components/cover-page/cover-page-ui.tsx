@@ -17,7 +17,7 @@ export const CoverPageUI = React.memo((props: Props) => {
           <div className={styles.blurb}>{props.blurb}</div>
         </div>
         <div className={styles.divider}></div>
-        <div>
+        <div className={styles.skillset}>
           <h3 className={styles.sectionTitle}>{props.topListTitle}</h3>
           <div className={styles.chipContainer}>
             {props.topListItems.map((item) => (
