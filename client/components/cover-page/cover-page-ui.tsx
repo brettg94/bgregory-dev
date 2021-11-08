@@ -33,13 +33,13 @@ export const CoverPageUI = React.memo((props: Props) => {
         </div>
       </div>
       <div className={styles.bottomDisclaimer}>
+        <Link href="https://github.com/brettg94/bgregory-dev" target="_blank">
+          Click here to view this website's source on GitHub.
+        </Link>
         <p>
           I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any (?) you see to get design and implementation
           rationale for specific features.
         </p>
-        <Link href="https://github.com/brettg94/bgregory-dev" target="_blank">
-          Click here to view the source on GitHub.
-        </Link>
         <ArrowDownwardIcon className={styles.arrowDownward} />
       </div>
     </div>

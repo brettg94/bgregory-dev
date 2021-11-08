@@ -18,7 +18,6 @@ export const MUI_THEME = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          textDecoration: 'none',
           fontWeight: 'bold'
         }
       },

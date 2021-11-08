@@ -1,5 +1,5 @@
 import { CONTENT_ENDPOINT } from '@Server/endpoints'
-import { CoverPage } from '@Server/manager/cms/cms-manager'
+import { CoverPage, ExperienceBlock } from '@Server/manager/cms/cms-manager'
 
 async function request<T>(url: string, verb: 'GET'): Promise<T> {
   const requestInit: RequestInit = {
@@ -23,6 +23,11 @@ async function getCoverPage(): Promise<CoverPage> {
   return await request<CoverPage>(CONTENT_ENDPOINT + '/cover-page', 'GET')
 }
 
+async function getExperienceBlocks(): Promise<ExperienceBlock[]> {
+  return await request<ExperienceBlock[]>(CONTENT_ENDPOINT + '/experience', 'GET')
+}
+
 export const API = {
-  getCoverPage
+  getCoverPage,
+  getExperienceBlocks
 }

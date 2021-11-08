@@ -9,7 +9,8 @@ const CONTENTFUL_ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT ?? ''
 const CONTENTFUL_PREVIEW_HOST = 'preview.contentful.com'
 
 export enum ContentfulModel {
-  COVER_PAGE = 'coverPage'
+  COVER_PAGE = 'coverPage',
+  EXPERIENCE_BLOCK = 'experienceBlock'
 }
 
 function getContentfulClient(): ContentfulClientApi {
