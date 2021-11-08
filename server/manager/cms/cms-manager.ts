@@ -2,6 +2,7 @@ import { ContentfulModel } from '@Server/integrations/contentful/contentful-inte
 import { ContentfulConverter } from '@Server/integrations/contentful/converter'
 import { CMSAsset } from '@Server/integrations/contentful/converter/contentful-asset-converter/contentful-asset-converter'
 import { ContentfulOperations } from '@Server/integrations/operations'
+import { Document } from '@contentful/rich-text-types'
 
 export type CoverPage = {
   logoImage: CMSAsset
@@ -24,7 +25,8 @@ export type ExperienceBlock = {
   startMonthAndYear: string
   endMonthAndYear: string | undefined
   coverImage: CMSAsset
-  details: string
+  details: Document
+  displayPriority: number
 }
 
 async function getExperienceBlocks(): Promise<ExperienceBlock[]> {

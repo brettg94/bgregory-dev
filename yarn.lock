@@ -62,6 +62,18 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@contentful/rich-text-react-renderer@^15.6.2":
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.6.2.tgz#da778bcd4ec2f61fd5a7459d4411f7a292f795fc"
+  integrity sha512-kT7YKGr8Igi65aEnz9XWqEZiUHfGHKRClCyQNs6gYYJwwzUmKW6y53UqKvCxJOFWsv794Irsx6ijvo0R7NDfcg==
+  dependencies:
+    "@contentful/rich-text-types" "^15.6.2"
+
+"@contentful/rich-text-types@^15.6.2":
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.6.2.tgz#fe213886970b2d8a867a7272de938753e95d1f6e"
+  integrity sha512-PAgQo7rGmYjCzkNmzfs6VYqB4SXpNy9mBTH2vLYcNrOh2qEkG3hIjjgCZCH96mAz6WHEr5OaZ+BASP3kIeu2gA==
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz#33bf4b7b39c178821606f669bbc447a6a629786b"
