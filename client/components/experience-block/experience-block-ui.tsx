@@ -10,7 +10,7 @@ type Props = ExperienceBlock
 export const ExperienceBlockUI = (props: Props) => {
   return (
     <div className={styles.container}>
-      <Paper elevation={2}>
+      <Paper elevation={2} className={styles.paper}>
         <LazyLoad height={'140px'} offset={10}>
           <img className={styles.coverImage} src={props.coverImage.url} title={props.coverImage.title} alt={props.coverImage.description}></img>
         </LazyLoad>

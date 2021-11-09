@@ -2,11 +2,15 @@
 
 .container {
   max-width: 600px;
-  margin: 8px 0px;
+  height: 100%;
 
-  @media screen and (min-width: $breakpoint-large) {
-    margin: 8px;
+  @media screen and (max-width: $breakpoint-xlarge) {
+    max-width: 720px;
   }
+}
+
+.paper {
+  height: 100%;
 }
 
 .coverImage {

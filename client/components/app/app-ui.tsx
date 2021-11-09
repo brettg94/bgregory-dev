@@ -15,7 +15,8 @@ export const App = () => {
     <ThemeProvider theme={MUI_THEME}>
       <div className={styles.app}>
         <CoverPage />
-        <LazyLoad height={'100vh'} offset={-10}>
+        {/* Utilizing the react-lazyload library to defer mounting of components (and thus API calls) that aren't in view */}
+        <LazyLoad height={'100vh'} offset={-10} resize={true}>
           <ExperiencePage />
         </LazyLoad>
       </div>
