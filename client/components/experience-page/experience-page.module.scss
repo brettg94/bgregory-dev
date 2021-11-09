@@ -1,5 +1,10 @@
 @import '~constants';
 
+.preloadContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
 .container {
   background-color: #373a59;
   color: $white-text;

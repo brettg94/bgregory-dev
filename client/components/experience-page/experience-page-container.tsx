@@ -1,7 +1,8 @@
+import React from 'react'
 import { API } from '@Client/api/api'
 import { ExperienceBlock } from '@Server/manager/cms/cms-manager'
-import React from 'react'
 import { ExperiencePageUI } from './experience-page-ui'
+import styles from './experience-page.module.scss'
 
 export const ExperiencePage = () => {
   const [experienceBlocks, setExperienceBlocks] = React.useState<ExperienceBlock[] | undefined>(undefined)
@@ -13,5 +14,5 @@ export const ExperiencePage = () => {
     })
   }, [])
 
-  return experienceBlocks ? <ExperiencePageUI experienceBlocks={experienceBlocks} /> : <div>Loading...</div>
+  return experienceBlocks ? <ExperiencePageUI experienceBlocks={experienceBlocks} /> : <div className={styles.preloadContainer}></div>
 }

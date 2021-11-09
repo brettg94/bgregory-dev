@@ -56,12 +56,11 @@ const config = {
             options: {
               modules: {
                 auto: true,
-                localIdentName: '[local]-[hash:base64:12]'
+                //Establish a naming scheme for CSS modules:
+                //component-name__cssClassName--hash
+                localIdentName: '[folder]__[local]--[hash:base64:5]'
               }
             }
-          },
-          {
-            loader: 'postcss-loader'
           },
           { loader: 'sass-loader' }
         ]
@@ -73,7 +72,7 @@ const config = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[local]-[hash:base64:12]',
+                localIdentName: '[folder]__[local]--[hash:base64:5]',
                 auto: true
               }
             }

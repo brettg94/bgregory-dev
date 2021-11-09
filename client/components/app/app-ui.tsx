@@ -4,6 +4,7 @@ import styles from './app.module.scss'
 import { ThemeProvider } from '@mui/system'
 import { MUI_THEME } from '@Client/styles/mui-styles'
 import { ExperiencePage } from '../experience-page/experience-page-container'
+import LazyLoad from 'react-lazyload'
 
 export const App = () => {
   React.useEffect(() => {
@@ -14,7 +15,9 @@ export const App = () => {
     <ThemeProvider theme={MUI_THEME}>
       <div className={styles.app}>
         <CoverPage />
-        <ExperiencePage />
+        <LazyLoad height={'100vh'} offset={-10}>
+          <ExperiencePage />
+        </LazyLoad>
       </div>
     </ThemeProvider>
   )
