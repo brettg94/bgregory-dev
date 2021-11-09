@@ -2,6 +2,7 @@ import React from 'react'
 import { API } from '@Client/api/api'
 import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
 import { CoverPageUI } from './cover-page-ui'
+import styles from './cover-page.module.scss'
 
 export const CoverPage = () => {
   const [coverPage, setCoverPage] = React.useState<CoverPageType | undefined>(undefined)
@@ -13,5 +14,5 @@ export const CoverPage = () => {
     })
   }, [])
 
-  return coverPage ? <CoverPageUI {...coverPage} /> : <div>Loading...</div>
+  return coverPage ? <CoverPageUI {...coverPage} /> : <div className={styles.preloadContainer}></div>
 }

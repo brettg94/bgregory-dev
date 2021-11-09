@@ -1,0 +1,22 @@
+@import '~constants';
+
+.preloadContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  background-color: #373a59;
+  color: $white-text;
+  padding: 16px;
+  padding-bottom: 48px;
+}
+
+.header {
+  text-align: center;
+}
+
+.experienceBlocks {
+  display: flex;
+  justify-content: center;
+}
