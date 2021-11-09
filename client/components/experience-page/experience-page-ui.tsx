@@ -8,7 +8,7 @@ type Props = {
   experienceBlocks: ExperienceBlock[]
 }
 
-export const ExperiencePageUI = (props: Props) => {
+export const ExperiencePageUI = React.memo((props: Props) => {
   const experienceBlocks = props.experienceBlocks
     .sort((a, b) => a.displayPriority - b.displayPriority)
     .map((block) => {
@@ -25,4 +25,4 @@ export const ExperiencePageUI = (props: Props) => {
       </div>
     </div>
   )
-}
+})

@@ -7,7 +7,7 @@ import styles from './experience-block.module.scss'
 
 type Props = ExperienceBlock
 
-export const ExperienceBlockUI = (props: Props) => {
+export const ExperienceBlockUI = React.memo((props: Props) => {
   return (
     <div className={styles.container}>
       <Paper elevation={2} className={styles.paper}>
@@ -25,4 +25,4 @@ export const ExperienceBlockUI = (props: Props) => {
       </Paper>
     </div>
   )
-}
+})
