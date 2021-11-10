@@ -10,8 +10,11 @@ const CONTENTFUL_PREVIEW_HOST = 'preview.contentful.com'
 
 export enum ContentfulModel {
   COVER_PAGE = 'coverPage',
-  EXPERIENCE_BLOCK = 'experienceBlock'
+  EXPERIENCE_BLOCK = 'experienceBlock',
+  TOOLTIP = 'tooltip'
 }
+
+export const CONTENTFUL_MAX_STRING_LENGTH = 255
 
 function getContentfulClient(): ContentfulClientApi {
   if (CONTENTFUL_USE_PREVIEW_API) {

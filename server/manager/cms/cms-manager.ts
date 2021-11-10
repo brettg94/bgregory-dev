@@ -3,6 +3,7 @@ import { ContentfulConverter } from '@Server/integrations/contentful/converter'
 import { CMSAsset } from '@Server/integrations/contentful/converter/contentful-asset-converter/contentful-asset-converter'
 import { ContentfulOperations } from '@Server/integrations/operations'
 import { Document } from '@contentful/rich-text-types'
+import { ContentfulTooltip } from '@Server/integrations/contentful/converter/contentful-tooltip-converter/contentful-tooltip-converter'
 
 export type CoverPage = {
   logoImage: CMSAsset
@@ -33,7 +34,14 @@ async function getExperienceBlocks(): Promise<ExperienceBlock[]> {
   return await ContentfulOperations.getAllEntriesOfModel<ExperienceBlock>(ContentfulModel.EXPERIENCE_BLOCK, ContentfulConverter.convertExperienceBlock)
 }
 
+export type Tooltip = ContentfulTooltip
+
+async function getTooltip(identifier: string): Promise<Tooltip> {
+  return await ContentfulOperations.getEntryByField<Tooltip>(ContentfulModel.TOOLTIP, 'identifier', identifier, ContentfulConverter.convertTooltip)
+}
+
 export const CMSManager = {
   getCoverPage,
-  getExperienceBlocks
+  getExperienceBlocks,
+  getTooltip
 }
