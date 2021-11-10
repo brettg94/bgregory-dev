@@ -1,14 +1,19 @@
 import { Reducers } from './actions/actions'
 import { Action } from 'redux'
 import { clone } from 'ramda'
+import { Tooltip } from '@Server/manager/cms/cms-manager'
 
-export type State = {}
+export type State = {
+  tooltips: { [key: string]: Tooltip }
+  activeTooltipIdentifier?: string
+}
 
-export const defaultState: State = {}
+export const defaultState: State = {
+  tooltips: {}
+}
 
-export const createRootReducer =
-  () =>
-  (state: State = defaultState, action: Action) => {
+export const createRootReducer = () => {
+  return (state: State = defaultState, action: Action) => {
     let newState = clone(state)
 
     for (let i = 0; i < Reducers.length; i++) {
@@ -17,3 +22,4 @@ export const createRootReducer =
 
     return newState
   }
+}
