@@ -1,7 +1,10 @@
 import { State } from '../redux'
 import { Reducer } from 'redux'
+import { ActivateTooltipModalAction } from './activate-tooltip-modal'
+import { SaveTooltipDataAction } from './save-tooltip-data'
+import { CloseTooltipModalAction } from './close-tooltip-modal'
 
-export const Reducers: Reducer<State>[] = []
+export const Reducers: Reducer<State>[] = [ActivateTooltipModalAction.reduce, SaveTooltipDataAction.reduce, CloseTooltipModalAction.reduce]
 
 /*
 I generally like a 1:1 relationship between reducers and actions. (Meaning every action has its own discrete reducer)

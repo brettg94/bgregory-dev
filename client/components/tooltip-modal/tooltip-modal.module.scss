@@ -1,0 +1,10 @@
+@import '~constants';
+
+.container {
+}
+
+.titleWithCloseButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

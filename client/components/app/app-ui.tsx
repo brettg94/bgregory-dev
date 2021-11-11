@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/system'
 import { MUI_THEME } from '@Client/styles/mui-styles'
 import { ExperiencePage } from '../experience-page/experience-page-container'
 import LazyLoad from 'react-lazyload'
+import { TooltipModal } from '../tooltip-modal/tooltip-modal-container'
 
 export const App = () => {
   React.useEffect(() => {
@@ -16,10 +17,11 @@ export const App = () => {
       <div className={styles.app}>
         <CoverPage />
         {/* Utilizing the react-lazyload library to defer mounting of components (and thus API calls) that aren't in view */}
-        <LazyLoad height={'100vh'} offset={-10} resize={true}>
+        <LazyLoad height={'100vh'} offset={-5} resize={true}>
           <ExperiencePage />
         </LazyLoad>
       </div>
+      <TooltipModal />
     </ThemeProvider>
   )
 }
