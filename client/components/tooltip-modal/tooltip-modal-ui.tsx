@@ -4,7 +4,7 @@ import { Tooltip } from '@Server/manager/cms/cms-manager'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import CloseIcon from '@mui/icons-material/Close'
 import styles from './tooltip-modal.module.scss'
-import { ContentfulRenderers } from '@Client/util/contentful-renderers'
+import { ContentfulRenderers } from '@Client/util/contentful-renderers/contentful-renderers'
 
 export type Props = {
   tooltip?: Tooltip

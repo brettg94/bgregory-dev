@@ -23,6 +23,13 @@ export const MUI_THEME = createTheme({
         }
       }
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          maxWidth: '800px'
+        }
+      }
+    },
     MuiLink: {
       styleOverrides: {
         root: {

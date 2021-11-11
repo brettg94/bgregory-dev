@@ -1,6 +1,8 @@
 import React from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Link } from '@mui/material'
+import styles from './contentful-renderers.module.scss'
+import { MARKS } from '@contentful/rich-text-types'
 
 /*
 This file contains overrides for Contentful's default rich-text React renderers.
@@ -24,6 +26,9 @@ const hyperlink = (node: any) => {
 const standardOptions = {
   renderNode: {
     hyperlink
+  },
+  renderMark: {
+    [MARKS.CODE]: (text: string) => <code className={styles.code}>{text}</code>
   }
 }
 
