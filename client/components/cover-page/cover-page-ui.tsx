@@ -4,6 +4,7 @@ import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import styles from './cover-page.module.scss'
 import { TooltipButton } from '../tooltip-button/tooltip-button-container'
+import { TooltipIdentifier } from '@Server/enum/enum'
 
 type Props = CoverPageType
 
@@ -39,7 +40,7 @@ export const CoverPageUI = React.memo((props: Props) => {
         </Link>
         <p>
           I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any "
-          <TooltipButton identifier={'TEST_TOOLTIP'} />" you see to get design and implementation rationale for specific features.
+          <TooltipButton identifier={TooltipIdentifier.COVER_PAGE} />" you see to get design and implementation rationale for specific features.
         </p>
 
         <ArrowDownwardIcon className={styles.arrowDownward} />

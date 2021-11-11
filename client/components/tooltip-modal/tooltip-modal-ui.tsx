@@ -4,6 +4,7 @@ import { Tooltip } from '@Server/manager/cms/cms-manager'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import CloseIcon from '@mui/icons-material/Close'
 import styles from './tooltip-modal.module.scss'
+import { ContentfulRenderers } from '@Client/util/contentful-renderers'
 
 export type Props = {
   tooltip?: Tooltip
@@ -28,7 +29,7 @@ export const TooltipModalUI = React.memo((props: Props) => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <div>{documentToReactComponents(props.tooltip.content)}</div>
+            <div>{documentToReactComponents(props.tooltip.content, ContentfulRenderers.standardOptions)}</div>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

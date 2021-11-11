@@ -15,6 +15,14 @@ export const MUI_THEME = createTheme({
     fontFamily: 'Red Hat Text'
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#252932',
+          backgroundImage: 'none'
+        }
+      }
+    },
     MuiLink: {
       styleOverrides: {
         root: {
