@@ -1,6 +1,6 @@
 import { Tooltip } from '@Server/manager/cms/cms-manager'
 import { State } from '../redux'
-import { guardReducer } from './helpers'
+import { reduceOnlyForSpecificAction } from './helpers'
 
 const SAVE_TOOLTIP_DATA = 'SAVE_TOOLTIP_DATA'
 
@@ -14,7 +14,7 @@ const create = (tooltip: Tooltip): SaveTooltipData => ({
   tooltip
 })
 
-const reduce = guardReducer(SAVE_TOOLTIP_DATA, (state: State, action: SaveTooltipData): State => {
+const reduce = reduceOnlyForSpecificAction(SAVE_TOOLTIP_DATA, (state: State, action: SaveTooltipData): State => {
   return {
     ...state,
     tooltips: {

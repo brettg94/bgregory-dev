@@ -1,5 +1,5 @@
 import { State } from '../redux'
-import { guardReducer } from './helpers'
+import { reduceOnlyForSpecificAction } from './helpers'
 
 const ACTIVATE_TOOLTIP_MODAL = 'ACTIVATE_TOOLTIP_MODAL'
 
@@ -13,7 +13,7 @@ const create = (tooltipIdentifer: string): ActivateTooltipModal => ({
   tooltipIdentifer
 })
 
-const reduce = guardReducer(ACTIVATE_TOOLTIP_MODAL, (state: State, action: ActivateTooltipModal): State => {
+const reduce = reduceOnlyForSpecificAction(ACTIVATE_TOOLTIP_MODAL, (state: State, action: ActivateTooltipModal): State => {
   return {
     ...state,
     activeTooltipIdentifier: action.tooltipIdentifer
