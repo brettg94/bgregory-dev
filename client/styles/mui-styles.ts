@@ -15,6 +15,21 @@ export const MUI_THEME = createTheme({
     fontFamily: 'Red Hat Text'
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#252932',
+          backgroundImage: 'none'
+        }
+      }
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          maxWidth: '800px'
+        }
+      }
+    },
     MuiLink: {
       styleOverrides: {
         root: {

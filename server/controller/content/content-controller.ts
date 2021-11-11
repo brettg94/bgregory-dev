@@ -1,3 +1,4 @@
+import { CONTENTFUL_MAX_STRING_LENGTH } from '@Server/integrations/contentful/contentful-integration'
 import { CMSManager } from '@Server/manager/cms/cms-manager'
 import { ExpressMiddleware } from '@Server/middleware'
 import { Router, Request, Response } from 'express'
@@ -7,23 +8,38 @@ export const contentRouter = Router()
 contentRouter.use('*', ExpressMiddleware.setJSONContentType)
 contentRouter.get('/cover-page', getCoverPageContent)
 contentRouter.get('/experience', getExperienceBlocks)
+contentRouter.get('/tooltip/:identifier', getTooltip)
 
 async function getCoverPageContent(req: Request, res: Response) {
   try {
     const coverPage = await CMSManager.getCoverPage()
-    res.status(200).send(coverPage)
+    return res.status(200).send(coverPage)
   } catch (e) {
     console.error(e)
-    res.status(500).send()
+    return res.status(500).send()
   }
 }
 
 async function getExperienceBlocks(req: Request, res: Response) {
   try {
     const experienceBlocks = await CMSManager.getExperienceBlocks()
-    res.status(200).send(experienceBlocks)
+    return res.status(200).send(experienceBlocks)
   } catch (e) {
     console.error(e)
-    res.status(500).send()
+    return res.status(500).send()
+  }
+}
+
+async function getTooltip(req: Request, res: Response) {
+  try {
+    const tooltipIdentifier = req.params.identifier
+    if (!tooltipIdentifier || tooltipIdentifier.length > CONTENTFUL_MAX_STRING_LENGTH) {
+      return res.status(400).send()
+    }
+    const tooltip = await CMSManager.getTooltip(tooltipIdentifier)
+    return res.status(200).send(tooltip)
+  } catch (e) {
+    console.error(e)
+    return res.status(500).send()
   }
 }

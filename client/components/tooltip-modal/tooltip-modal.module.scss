@@ -1,0 +1,11 @@
+@import '~constants';
+
+.container {
+  max-width: 800px;
+}
+
+.titleWithCloseButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -7,7 +7,7 @@ export async function getSingletonEntry<T>(model: ContentfulModel, converter: (r
   })
 
   if (entries.items.length !== 1) {
-    throw new Error(`CMS Error: expected exactly one entry for model ${model}, but got: ${entries.items.length}`)
+    throw new Error(`Contentful error: expected exactly one entry for model ${model}, but got: ${entries.items.length}`)
   }
 
   return converter(entries.items[0])

@@ -1,0 +1,12 @@
+@import '~constants';
+
+.code {
+  padding: 2px 6px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #acc3ff;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: $font-size-small;
+  border-radius: 4px;
+  margin: 0px 2px;
+}
