@@ -1,5 +1,5 @@
 import { CONTENT_ENDPOINT } from '@Server/endpoints'
-import { CoverPage, ExperienceBlock, Tooltip } from '@Server/manager/cms/cms-manager'
+import { CoverPage, ExperienceBlock, Project, Tooltip } from '@Server/manager/cms/cms-manager'
 
 async function request<T>(url: string, verb: 'GET'): Promise<T> {
   const requestInit: RequestInit = {
@@ -31,8 +31,13 @@ async function getTooltip(identifier: string): Promise<Tooltip> {
   return await request<Tooltip>(CONTENT_ENDPOINT + '/tooltip/' + identifier, 'GET')
 }
 
+async function getProjects(): Promise<Project[]> {
+  return await request<Project[]>(CONTENT_ENDPOINT + '/projects', 'GET')
+}
+
 export const API = {
   getCoverPage,
   getExperienceBlocks,
-  getTooltip
+  getTooltip,
+  getProjects
 }

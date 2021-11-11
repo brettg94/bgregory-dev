@@ -1,0 +1,43 @@
+@import '~constants';
+
+.container {
+  max-width: 600px;
+  height: 100%;
+
+  @media screen and (max-width: $breakpoint-xlarge) {
+    max-width: 720px;
+  }
+}
+
+.paper {
+  height: 100%;
+}
+
+.interior {
+  display: flex;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.linkIcon {
+  margin-right: 4px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  padding-right: 16px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0px 0px 4px 4px;
+}

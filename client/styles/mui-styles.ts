@@ -37,7 +37,8 @@ export const MUI_THEME = createTheme({
         }
       },
       defaultProps: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        target: '_blank' //This site has no routing so every link is going to be external
       }
     }
   }
