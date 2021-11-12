@@ -56,9 +56,25 @@ async function getProjects(): Promise<Project[]> {
   return await ContentfulOperations.getAllEntriesOfModel(ContentfulModel.PROJECT, ContentfulConverter.convertProject)
 }
 
+export type Skill = {
+  title: string
+  tooltipIdentifier?: string
+}
+
+export type SkillSection = {
+  title: string
+  skills: Skill[]
+  displayPriority: number
+}
+
+async function getSkillSectionsWithSkills(): Promise<SkillSection[]> {
+  return await ContentfulOperations.getAllEntriesOfModel(ContentfulModel.SKILL_SECTION, ContentfulConverter.convertSkillSection, 2)
+}
+
 export const CMSManager = {
   getCoverPage,
   getExperienceBlocks,
   getTooltip,
-  getProjects
+  getProjects,
+  getSkillSectionsWithSkills
 }

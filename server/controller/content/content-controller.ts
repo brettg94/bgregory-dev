@@ -10,6 +10,7 @@ contentRouter.get('/cover-page', getCoverPageContent)
 contentRouter.get('/experience', getExperienceBlocks)
 contentRouter.get('/tooltip/:identifier', getTooltip)
 contentRouter.get('/projects', getProjects)
+contentRouter.get('/skill-sections-with-skills', getSkillSectionsWithSkills)
 
 async function getCoverPageContent(req: Request, res: Response) {
   try {
@@ -49,6 +50,16 @@ async function getProjects(req: Request, res: Response) {
   try {
     const projects = await CMSManager.getProjects()
     return res.status(200).send(projects)
+  } catch (e) {
+    console.error(e)
+    return res.status(500).send()
+  }
+}
+
+async function getSkillSectionsWithSkills(req: Request, res: Response) {
+  try {
+    const skillSectionsWithSkills = await CMSManager.getSkillSectionsWithSkills()
+    return res.status(200).send(skillSectionsWithSkills)
   } catch (e) {
     console.error(e)
     return res.status(500).send()

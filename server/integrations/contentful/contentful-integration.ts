@@ -7,12 +7,15 @@ const CONTENTFUL_USE_PREVIEW_API = process.env.CONTENTFUL_USE_PREVIEW_API === 't
 const CONTENTFUL_ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT ?? ''
 
 const CONTENTFUL_PREVIEW_HOST = 'preview.contentful.com'
+export const CONTENTFUL_DEFAULT_SEARCH_DEPTH = 1
 
 export enum ContentfulModel {
   COVER_PAGE = 'coverPage',
   EXPERIENCE_BLOCK = 'experienceBlock',
   TOOLTIP = 'tooltip',
-  PROJECT = 'project'
+  PROJECT = 'project',
+  SKILL_SECTION = 'skillSection',
+  SKILL = 'skill'
 }
 
 export const CONTENTFUL_MAX_STRING_LENGTH = 255
