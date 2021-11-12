@@ -41,8 +41,24 @@ async function getTooltip(identifier: string): Promise<Tooltip> {
   return await ContentfulOperations.getEntryByField<Tooltip>(ContentfulModel.TOOLTIP, 'identifier', identifier, ContentfulConverter.convertTooltip)
 }
 
+export type Project = {
+  title: string
+  logo: CMSAsset
+  url?: string
+  timeframe: string
+  description: Document
+  displayPriority: number
+  primaryImage?: CMSAsset
+  gfycatEmbed?: string
+}
+
+async function getProjects(): Promise<Project[]> {
+  return await ContentfulOperations.getAllEntriesOfModel(ContentfulModel.PROJECT, ContentfulConverter.convertProject)
+}
+
 export const CMSManager = {
   getCoverPage,
   getExperienceBlocks,
-  getTooltip
+  getTooltip,
+  getProjects
 }

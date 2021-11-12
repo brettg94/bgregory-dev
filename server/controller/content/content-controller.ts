@@ -9,6 +9,7 @@ contentRouter.use('*', ExpressMiddleware.setJSONContentType)
 contentRouter.get('/cover-page', getCoverPageContent)
 contentRouter.get('/experience', getExperienceBlocks)
 contentRouter.get('/tooltip/:identifier', getTooltip)
+contentRouter.get('/projects', getProjects)
 
 async function getCoverPageContent(req: Request, res: Response) {
   try {
@@ -38,6 +39,16 @@ async function getTooltip(req: Request, res: Response) {
     }
     const tooltip = await CMSManager.getTooltip(tooltipIdentifier)
     return res.status(200).send(tooltip)
+  } catch (e) {
+    console.error(e)
+    return res.status(500).send()
+  }
+}
+
+async function getProjects(req: Request, res: Response) {
+  try {
+    const projects = await CMSManager.getProjects()
+    return res.status(200).send(projects)
   } catch (e) {
     console.error(e)
     return res.status(500).send()

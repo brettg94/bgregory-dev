@@ -11,7 +11,8 @@ const CONTENTFUL_PREVIEW_HOST = 'preview.contentful.com'
 export enum ContentfulModel {
   COVER_PAGE = 'coverPage',
   EXPERIENCE_BLOCK = 'experienceBlock',
-  TOOLTIP = 'tooltip'
+  TOOLTIP = 'tooltip',
+  PROJECT = 'project'
 }
 
 export const CONTENTFUL_MAX_STRING_LENGTH = 255

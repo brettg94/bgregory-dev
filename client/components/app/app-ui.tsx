@@ -6,6 +6,7 @@ import { MUI_THEME } from '@Client/styles/mui-styles'
 import { ExperiencePage } from '../experience-page/experience-page-container'
 import LazyLoad from 'react-lazyload'
 import { TooltipModal } from '../tooltip-modal/tooltip-modal-container'
+import { ProjectsPage } from '../projects-page/projects-page-container'
 
 export const App = () => {
   React.useEffect(() => {
@@ -19,6 +20,9 @@ export const App = () => {
         {/* Utilizing the react-lazyload library to defer mounting of components (and thus API calls) that aren't in view */}
         <LazyLoad height={'100vh'} offset={-5} resize={true}>
           <ExperiencePage />
+        </LazyLoad>
+        <LazyLoad height={'100vh'} offset={-5} resize={true}>
+          <ProjectsPage />
         </LazyLoad>
       </div>
       <TooltipModal />
