@@ -19,7 +19,7 @@ export const ProjectsPageUI = React.memo((props: Props) => {
     <div className={styles.container}>
       <h2 className={styles.header}>PROJECTS</h2>
       <div>
-        <Stack direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row' }} spacing={4} justifyContent="center" alignItems="center">
+        <Stack direction={'column'} spacing={4} justifyContent="center" alignItems="center">
           {sortedProjects}
         </Stack>
       </div>
