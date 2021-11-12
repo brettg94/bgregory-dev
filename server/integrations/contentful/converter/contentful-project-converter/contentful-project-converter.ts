@@ -6,7 +6,7 @@ import { ContentfulConverter } from '..'
 type ContentfulProject = {
   title: string
   logo: Asset
-  url: string
+  url?: string
   timeframe: string
   description: Document
   displayPriority: number

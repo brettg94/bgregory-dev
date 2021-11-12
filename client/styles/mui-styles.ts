@@ -18,7 +18,7 @@ export const MUI_THEME = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: '#252932',
+          backgroundColor: '#191d28',
           backgroundImage: 'none'
         }
       }
@@ -26,6 +26,7 @@ export const MUI_THEME = createTheme({
     MuiDialog: {
       styleOverrides: {
         paper: {
+          backgroundColor: '#252932',
           maxWidth: '800px'
         }
       }

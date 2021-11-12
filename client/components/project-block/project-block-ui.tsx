@@ -11,15 +11,32 @@ type Props = Project
 export const ProjectBlock = React.memo((props: Props) => {
   const getImageOrGfycatEmbed = () => {
     if (props.gfycatEmbed) {
-      return <iframe src={props.gfycatEmbed} width="100%" height="100%"></iframe>
+      return (
+        <div className={styles.mediaContainer}>
+          <iframe className={styles.gfycatEmbed} src={props.gfycatEmbed}></iframe>
+        </div>
+      )
     } else if (props.primaryImage) {
       return (
         <LazyLoad height={'400px'} offset={10}>
-          <img className={styles.image} src={props.primaryImage.url} title={props.primaryImage.title} alt={props.primaryImage.description}></img>
+          <div className={styles.mediaContainer}>
+            <img className={styles.image} src={props.primaryImage.url} title={props.primaryImage.title} alt={props.primaryImage.description}></img>
+          </div>
         </LazyLoad>
       )
     }
     return null
+  }
+
+  const getHeader = () => {
+    if (props.url) {
+      return (
+        <>
+          <LinkIcon className={styles.linkIcon} fontSize="small" /> <Link href={props.url}>{props.title}</Link>
+        </>
+      )
+    }
+    return <div className={styles.noLinkHeaderTitle}>{props.title}</div>
   }
 
   return (
@@ -30,12 +47,11 @@ export const ProjectBlock = React.memo((props: Props) => {
             <img className={styles.logo} src={props.logo.url} title={props.logo.title} alt={props.logo.description}></img>
           </LazyLoad>
           <div>
-            <div className={styles.header}>
-              <LinkIcon className={styles.linkIcon} fontSize="small" /> <Link href={props.url}>{props.title}</Link>
-            </div>
+            <div className={styles.header}>{getHeader()}</div>
             <div>{documentToReactComponents(props.description)}</div>
           </div>
         </div>
+        <hr className={styles.hr} />
         {getImageOrGfycatEmbed()}
       </Paper>
     </div>

@@ -44,7 +44,7 @@ async function getTooltip(identifier: string): Promise<Tooltip> {
 export type Project = {
   title: string
   logo: CMSAsset
-  url: string
+  url?: string
   timeframe: string
   description: Document
   displayPriority: number
