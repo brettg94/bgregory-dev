@@ -15,7 +15,8 @@ export enum ContentfulModel {
   TOOLTIP = 'tooltip',
   PROJECT = 'project',
   SKILL_SECTION = 'skillSection',
-  SKILL = 'skill'
+  SKILL = 'skill',
+  CONTACT_DETAILS = 'contactDetails'
 }
 
 export const CONTENTFUL_MAX_STRING_LENGTH = 255

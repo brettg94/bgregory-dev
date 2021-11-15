@@ -12,7 +12,7 @@ export const ProjectsPageUI = React.memo((props: Props) => {
   const sortedProjects = props.projects
     .sort((a, b) => a.displayPriority - b.displayPriority)
     .map((project) => {
-      return <ProjectBlock {...project} />
+      return <ProjectBlock key={project.title} {...project} />
     })
 
   return (

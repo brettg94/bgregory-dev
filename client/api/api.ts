@@ -1,5 +1,5 @@
 import { CONTENT_ENDPOINT } from '@Server/endpoints'
-import { CoverPage, ExperienceBlock, Project, SkillSection, Tooltip } from '@Server/manager/cms/cms-manager'
+import { CoverPageWithContactDetails, ExperienceBlock, Project, SkillSection, Tooltip } from '@Server/manager/cms/cms-manager'
 
 async function request<T>(url: string, verb: 'GET'): Promise<T> {
   const requestInit: RequestInit = {
@@ -19,8 +19,8 @@ async function request<T>(url: string, verb: 'GET'): Promise<T> {
   return await results.json()
 }
 
-async function getCoverPage(): Promise<CoverPage> {
-  return await request<CoverPage>(CONTENT_ENDPOINT + '/cover-page', 'GET')
+async function getCoverPageWithContactDetails(): Promise<CoverPageWithContactDetails> {
+  return await request<CoverPageWithContactDetails>(CONTENT_ENDPOINT + '/cover-page', 'GET')
 }
 
 async function getExperienceBlocks(): Promise<ExperienceBlock[]> {
@@ -40,7 +40,7 @@ async function getSkillSectionsWithSkills(): Promise<SkillSection[]> {
 }
 
 export const API = {
-  getCoverPage,
+  getCoverPageWithContactDetails,
   getExperienceBlocks,
   getTooltip,
   getProjects,

@@ -1,15 +1,39 @@
 import React from 'react'
-import { Chip, Link } from '@mui/material'
-import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
+import { Chip, IconButton, Link } from '@mui/material'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import styles from './cover-page.module.scss'
 import { TooltipButton } from '../tooltip-button/tooltip-button-container'
 import { TooltipIdentifier } from '@Server/enum/enum'
+import { CoverPageWithContactDetails } from '@Server/manager/cms/cms-manager'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { ContactEmailButton } from '../contact-email-button/contact-email-button-ui'
 
-type Props = CoverPageType
+type Props = CoverPageWithContactDetails
 
-//Memoize, is a pure function
 export const CoverPageUI = React.memo((props: Props) => {
+  const getContactIcons = () => {
+    const icons = []
+    if (props.contactEmail) {
+      icons.push(<ContactEmailButton key={'contact-email'} buttonType="ICON" contactEmail={props.contactEmail} />)
+    }
+    if (props.gitHubUrl) {
+      icons.push(
+        <IconButton key={'github'} component={Link} href={props.gitHubUrl}>
+          <GitHubIcon fontSize="large" />
+        </IconButton>
+      )
+    }
+    if (props.linkedInUrl) {
+      icons.push(
+        <IconButton key={'linkedin'} component={Link} href={props.linkedInUrl}>
+          <LinkedInIcon fontSize="large" />
+        </IconButton>
+      )
+    }
+    return icons
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.interior}>
@@ -17,6 +41,7 @@ export const CoverPageUI = React.memo((props: Props) => {
           <img className={styles.logoImage} src={props.logoImage.url} title={props.logoImage.title} alt={props.logoImage.description}></img>
           <div className={styles.jobTitle}>{props.jobTitle}</div>
           <div className={styles.blurb}>{props.blurb}</div>
+          <div className={styles.contactIconsContainer}>{...getContactIcons()}</div>
         </div>
         <div className={styles.divider}></div>
         <div className={styles.skillset}>
@@ -26,7 +51,7 @@ export const CoverPageUI = React.memo((props: Props) => {
               <Chip color="primary" key={item} label={item}></Chip>
             ))}
           </div>
-          <h3 className={styles.sectionTitle}>{props.bottomListTitle}</h3>
+          <h3 className={styles.secondSectionTitle}>{props.bottomListTitle}</h3>
           <div className={styles.chipContainer}>
             {props.bottomListItems.map((item) => (
               <Chip color="secondary" key={item} label={item}></Chip>
@@ -35,14 +60,11 @@ export const CoverPageUI = React.memo((props: Props) => {
         </div>
       </div>
       <div className={styles.bottomDisclaimer}>
-        <Link href="https://github.com/brettg94/bgregory-dev" target="_blank">
-          Click here to view this website's source on GitHub.
-        </Link>
+        <Link href={props.gitHubRepositoryUrl}>Click here to view this website's source on GitHub.</Link>
         <p>
           I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any "
           <TooltipButton identifier={TooltipIdentifier.COVER_PAGE} />" you see to get design and implementation rationale for specific features.
         </p>
-
         <ArrowDownwardIcon className={styles.arrowDownward} />
       </div>
     </div>

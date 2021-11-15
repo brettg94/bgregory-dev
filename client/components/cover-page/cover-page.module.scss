@@ -25,6 +25,7 @@
 
 .interior {
   display: flex;
+  align-items: center;
 
   @media screen and (max-width: $breakpoint-large) {
     flex-direction: column;
@@ -60,10 +61,15 @@
   }
 }
 
+.contactIconsContainer {
+  margin-top: 8px;
+}
+
 .divider {
   width: 1px;
   background-color: rgba(255, 255, 255, 0.496);
   margin: 0px 24px;
+  height: 20vh;
 
   @media screen and (max-width: $breakpoint-large) {
     width: 50%;
@@ -76,7 +82,8 @@
   padding: 8px;
 }
 
-.sectionTitle {
+.sectionTitle,
+.secondSectionTitle {
   color: $white-text;
   margin-top: 0px;
   margin-bottom: 8px;
@@ -85,10 +92,13 @@
   }
 }
 
+.secondSectionTitle {
+  margin-top: 24px;
+}
+
 .chipContainer {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 24px;
 
   & > * {
     margin: 4px;

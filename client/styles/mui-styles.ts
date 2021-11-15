@@ -27,7 +27,15 @@ export const MUI_THEME = createTheme({
       styleOverrides: {
         paper: {
           backgroundColor: '#252932',
-          maxWidth: '800px'
+          maxWidth: '800px',
+          margin: '16px'
+        }
+      }
+    },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: '#ad29c0'
         }
       }
     },

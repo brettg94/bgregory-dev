@@ -14,7 +14,7 @@ export const ExperiencePageUI = React.memo((props: Props) => {
   const experienceBlocks = props.experienceBlocks
     .sort((a, b) => a.displayPriority - b.displayPriority)
     .map((block) => {
-      return <ExperienceBlockUI {...block} />
+      return <ExperienceBlockUI key={block.company} {...block} />
     })
 
   return (

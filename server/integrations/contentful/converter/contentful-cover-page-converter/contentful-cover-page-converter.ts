@@ -6,6 +6,7 @@ type ContentfulCoverPage = {
   logoImage: Asset
   jobTitle: string
   blurb: string
+  gitHubRepositoryUrl: string
   topListTitle: string
   topListItems: string[]
   bottomListTitle: string
@@ -17,6 +18,7 @@ export function convertCoverPage(entry: Entry<ContentfulCoverPage>): CoverPage {
     jobTitle: entry.fields.jobTitle,
     blurb: entry.fields.blurb,
     logoImage: ContentfulConverter.convertAsset(entry.fields.logoImage),
+    gitHubRepositoryUrl: entry.fields.gitHubRepositoryUrl,
     topListTitle: entry.fields.topListTitle,
     topListItems: entry.fields.topListItems,
     bottomListTitle: entry.fields.bottomListTitle,

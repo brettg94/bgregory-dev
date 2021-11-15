@@ -1,4 +1,4 @@
-import { CloseTooltipModalAction } from '@Client/redux/actions/close-tooltip-modal'
+import { CloseTooltipModalAction } from '@Client/redux/actions/close-tooltip-modal/close-tooltip-modal'
 import { State } from '@Client/redux/redux'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'

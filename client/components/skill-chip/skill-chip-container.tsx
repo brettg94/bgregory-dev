@@ -1,5 +1,5 @@
 import { State } from '@Client/redux/redux'
-import { fetchTooltipThunk } from '@Client/redux/thunk/fetch-tooltip'
+import { fetchTooltipThunk } from '@Client/redux/thunk/fetch-tooltip/fetch-tooltip'
 import { Skill } from '@Server/manager/cms/cms-manager'
 import { connect } from 'react-redux'
 import { Action } from 'redux'

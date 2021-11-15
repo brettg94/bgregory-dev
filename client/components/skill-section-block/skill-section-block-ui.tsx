@@ -21,7 +21,7 @@ export const SkillSectionBlock = (props: Props) => {
             // divider={<Divider orientation="vertical" flexItem />}
           >
             {props.skills.map((skill) => (
-              <SkillChip {...skill} />
+              <SkillChip key={skill.title} {...skill} />
             ))}
           </Stack>
         </div>

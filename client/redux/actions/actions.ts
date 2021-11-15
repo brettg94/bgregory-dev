@@ -1,10 +1,18 @@
 import { State } from '../redux'
 import { Reducer } from 'redux'
-import { ActivateTooltipModalAction } from './activate-tooltip-modal'
-import { SaveTooltipDataAction } from './save-tooltip-data'
-import { CloseTooltipModalAction } from './close-tooltip-modal'
+import { ActivateTooltipModalAction } from './activate-tooltip-modal/activate-tooltip-modal'
+import { SaveTooltipDataAction } from './save-tooltip-data/save-tooltip-data'
+import { CloseTooltipModalAction } from './close-tooltip-modal/close-tooltip-modal'
+import { SetContactEmailAction } from './set-contact-email/set-contact-email'
+import { SetHighestPageMountedAction } from './set-highest-page-mounted/set-highest-page-mounted'
 
-export const Reducers: Reducer<State>[] = [ActivateTooltipModalAction.reduce, SaveTooltipDataAction.reduce, CloseTooltipModalAction.reduce]
+export const Reducers: Reducer<State>[] = [
+  ActivateTooltipModalAction.reduce,
+  SaveTooltipDataAction.reduce,
+  CloseTooltipModalAction.reduce,
+  SetContactEmailAction.reduce,
+  SetHighestPageMountedAction.reduce
+]
 
 /*
 I generally like a 1:1 relationship between reducers and actions. (Meaning every action has its own discrete reducer)
