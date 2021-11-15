@@ -1,11 +1,17 @@
 import React from 'react'
 import { Project } from '@Server/manager/cms/cms-manager'
-import { Stack } from '@mui/material'
 import styles from './projects-page.module.scss'
 import { ProjectBlock } from '../project-block/project-block-ui'
+import Masonry from 'react-masonry-css'
 
 type Props = {
   projects: Project[]
+}
+
+const masonryBreakpoints = {
+  default: 3,
+  1200: 2,
+  860: 1
 }
 
 export const ProjectsPageUI = React.memo((props: Props) => {
@@ -19,9 +25,9 @@ export const ProjectsPageUI = React.memo((props: Props) => {
     <div className={styles.container}>
       <h2 className={styles.header}>PROJECTS</h2>
       <div>
-        <Stack direction={'column'} spacing={4} justifyContent="center" alignItems="center">
+        <Masonry breakpointCols={masonryBreakpoints} className={styles.masonryGrid} columnClassName={styles.gridColumn}>
           {sortedProjects}
-        </Stack>
+        </Masonry>
       </div>
     </div>
   )

@@ -2,10 +2,9 @@
 
 .container {
   max-width: 600px;
-  height: 100%;
 
   @media screen and (max-width: $breakpoint-xlarge) {
-    max-width: 720px;
+    max-width: 860px;
   }
 }
 
