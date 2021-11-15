@@ -32,6 +32,13 @@ export const MUI_THEME = createTheme({
         }
       }
     },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: '#ad29c0'
+        }
+      }
+    },
     MuiLink: {
       styleOverrides: {
         root: {

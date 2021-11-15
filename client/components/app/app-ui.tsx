@@ -8,6 +8,7 @@ import LazyLoad from 'react-lazyload'
 import { TooltipModal } from '../tooltip-modal/tooltip-modal-container'
 import { ProjectsPage } from '../projects-page/projects-page-container'
 import { SkillsPage } from '../skills-page/skills-page-container'
+import { ContactPage } from '../contact-page/contact-page-container'
 
 export const App = () => {
   React.useEffect(() => {
@@ -28,6 +29,7 @@ export const App = () => {
         <LazyLoad height={'100vh'} offset={-5} resize={true}>
           <SkillsPage />
         </LazyLoad>
+        <ContactPage />
       </div>
       <TooltipModal />
     </ThemeProvider>

@@ -7,7 +7,7 @@ import { TooltipIdentifier } from '@Server/enum/enum'
 import { CoverPageWithContactDetails } from '@Server/manager/cms/cms-manager'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import { ContactEmailIconButton } from '../contact-email-icon-button/contact-email-icon-button-ui'
+import { ContactEmailButton } from '../contact-email-button/contact-email-button-ui'
 
 type Props = CoverPageWithContactDetails
 
@@ -15,18 +15,18 @@ export const CoverPageUI = React.memo((props: Props) => {
   const getContactIcons = () => {
     const icons = []
     if (props.contactEmail) {
-      icons.push(<ContactEmailIconButton contactEmail={props.contactEmail} />)
+      icons.push(<ContactEmailButton key={'contact-email'} buttonType="ICON" contactEmail={props.contactEmail} />)
     }
     if (props.gitHubUrl) {
       icons.push(
-        <IconButton component={Link} href={props.gitHubUrl}>
+        <IconButton key={'github'} component={Link} href={props.gitHubUrl}>
           <GitHubIcon fontSize="large" />
         </IconButton>
       )
     }
     if (props.linkedInUrl) {
       icons.push(
-        <IconButton component={Link} href={props.linkedInUrl}>
+        <IconButton key={'linkedin'} component={Link} href={props.linkedInUrl}>
           <LinkedInIcon fontSize="large" />
         </IconButton>
       )

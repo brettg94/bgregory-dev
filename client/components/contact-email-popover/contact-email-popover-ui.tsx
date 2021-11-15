@@ -18,7 +18,11 @@ export const ContactEmailPopover = (props: Props) => {
       anchorEl={props.anchorEl}
       onClose={props.onClose}
       anchorOrigin={{
-        vertical: 'bottom',
+        vertical: 'center',
+        horizontal: 'center'
+      }}
+      transformOrigin={{
+        vertical: 'center',
         horizontal: 'center'
       }}
     >

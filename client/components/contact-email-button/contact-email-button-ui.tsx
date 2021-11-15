@@ -1,13 +1,14 @@
 import React from 'react'
 import EmailIcon from '@mui/icons-material/Email'
 import { ContactEmailPopover } from '../contact-email-popover/contact-email-popover-ui'
-import { IconButton } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
 
 type Props = {
   contactEmail: string
+  buttonType?: 'PROMPT' | 'ICON'
 }
 
-export const ContactEmailIconButton = (props: Props) => {
+export const ContactEmailButton = (props: Props) => {
   const [contactEmailAnchor, setContactEmailAnchor] = React.useState<Element | undefined>(undefined)
 
   const handleContactEmailClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,11 +18,26 @@ export const ContactEmailIconButton = (props: Props) => {
   const handleContactEmailClose = () => {
     setContactEmailAnchor(undefined)
   }
+
+  const getButton = () => {
+    if (props.buttonType === 'ICON') {
+      return (
+        <IconButton onClick={handleContactEmailClick}>
+          <EmailIcon fontSize="large" />
+        </IconButton>
+      )
+    }
+
+    return (
+      <Button color="primary" variant="contained" onClick={handleContactEmailClick}>
+        SHOW EMAIL
+      </Button>
+    )
+  }
+
   return (
     <>
-      <IconButton onClick={handleContactEmailClick}>
-        <EmailIcon fontSize="large" />
-      </IconButton>
+      {getButton()}
       <ContactEmailPopover
         open={Boolean(contactEmailAnchor)}
         anchorEl={contactEmailAnchor!}
