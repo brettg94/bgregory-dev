@@ -1,14 +1,13 @@
 import React from 'react'
 import { Chip, Link } from '@mui/material'
-import { CoverPage as CoverPageType } from '@Server/manager/cms/cms-manager'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import styles from './cover-page.module.scss'
 import { TooltipButton } from '../tooltip-button/tooltip-button-container'
 import { TooltipIdentifier } from '@Server/enum/enum'
+import { CoverPageWithContactDetails } from '@Server/manager/cms/cms-manager'
 
-type Props = CoverPageType
+type Props = CoverPageWithContactDetails
 
-//Memoize, is a pure function
 export const CoverPageUI = React.memo((props: Props) => {
   return (
     <div className={styles.container}>
@@ -35,14 +34,11 @@ export const CoverPageUI = React.memo((props: Props) => {
         </div>
       </div>
       <div className={styles.bottomDisclaimer}>
-        <Link href="https://github.com/brettg94/bgregory-dev" target="_blank">
-          Click here to view this website's source on GitHub.
-        </Link>
+        <Link href={props.gitHubRepositoryUrl}>Click here to view this website's source on GitHub.</Link>
         <p>
           I built this site with Node.js and React to serve as both a resume and live portfolio piece. Click on any "
           <TooltipButton identifier={TooltipIdentifier.COVER_PAGE} />" you see to get design and implementation rationale for specific features.
         </p>
-
         <ArrowDownwardIcon className={styles.arrowDownward} />
       </div>
     </div>

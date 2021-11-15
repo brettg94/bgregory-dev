@@ -6,10 +6,12 @@ import { Tooltip } from '@Server/manager/cms/cms-manager'
 export type State = {
   tooltips: { [key: string]: Tooltip }
   activeTooltipIdentifier?: string
+  contactEmail: string
 }
 
 export const defaultState: State = {
-  tooltips: {}
+  tooltips: {},
+  contactEmail: ''
 }
 
 export const createRootReducer = () => {

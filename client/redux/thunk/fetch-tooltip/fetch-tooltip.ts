@@ -1,8 +1,8 @@
 import { API } from '@Client/api/api'
 import { Dispatch } from 'redux'
-import { ActivateTooltipModalAction } from '../actions/activate-tooltip-modal'
-import { SaveTooltipDataAction } from '../actions/save-tooltip-data'
-import { State } from '../redux'
+import { ActivateTooltipModalAction } from '../../actions/activate-tooltip-modal/activate-tooltip-modal'
+import { SaveTooltipDataAction } from '../../actions/save-tooltip-data/save-tooltip-data'
+import { State } from '../../redux'
 
 export function fetchTooltipThunk(tooltipIdentifier: string) {
   return async (dispatch: Dispatch, getState: () => State) => {

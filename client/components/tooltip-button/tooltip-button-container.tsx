@@ -1,5 +1,5 @@
 import { State } from '@Client/redux/redux'
-import { fetchTooltipThunk } from '@Client/redux/thunk/fetch-tooltip'
+import { fetchTooltipThunk } from '@Client/redux/thunk/fetch-tooltip/fetch-tooltip'
 import { connect } from 'react-redux'
 import { Action } from 'redux'
 import { ThunkDispatch } from 'redux-thunk'

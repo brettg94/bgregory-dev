@@ -1,6 +1,6 @@
 import { Tooltip } from '@Server/manager/cms/cms-manager'
-import { State } from '../redux'
-import { reduceOnlyForSpecificAction } from './helpers'
+import { State } from '../../redux'
+import { reduceOnlyForSpecificAction } from '../helpers'
 
 const SAVE_TOOLTIP_DATA = 'SAVE_TOOLTIP_DATA'
 

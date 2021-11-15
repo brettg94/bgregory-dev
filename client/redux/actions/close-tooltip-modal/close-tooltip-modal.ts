@@ -1,5 +1,5 @@
-import { State } from '../redux'
-import { reduceOnlyForSpecificAction } from './helpers'
+import { State } from '../../redux'
+import { reduceOnlyForSpecificAction } from '../helpers'
 
 const CLOSE_TOOLTIP_MODAL = 'CLOSE_TOOLTIP_MODAL'
 

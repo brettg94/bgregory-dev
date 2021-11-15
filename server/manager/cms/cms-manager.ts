@@ -10,14 +10,22 @@ export type CoverPage = {
   logoImage: CMSAsset
   jobTitle: string
   blurb: string
+  gitHubRepositoryUrl: string
   topListTitle: string
   topListItems: string[]
   bottomListTitle: string
   bottomListItems: string[]
 }
 
+export type CoverPageWithContactDetails = CoverPage & ContactDetails
+
 async function getCoverPage(): Promise<CoverPage> {
-  return await ContentfulOperations.getSingletonEntry<CoverPage>(ContentfulModel.COVER_PAGE, ContentfulConverter.convertCoverPage)
+  const coverPage = await ContentfulOperations.getSingletonEntry<CoverPage>(ContentfulModel.COVER_PAGE, ContentfulConverter.convertCoverPage)
+  const contactDetails = await getContactDetails()
+  return {
+    ...coverPage,
+    ...contactDetails
+  }
 }
 
 export type ExperienceBlock = {
@@ -71,10 +79,21 @@ async function getSkillSectionsWithSkills(): Promise<SkillSection[]> {
   return await ContentfulOperations.getAllEntriesOfModel(ContentfulModel.SKILL_SECTION, ContentfulConverter.convertSkillSection, 2)
 }
 
+export type ContactDetails = {
+  contactEmail: string
+  gitHub?: string
+  linkedIn?: string
+}
+
+async function getContactDetails(): Promise<ContactDetails> {
+  return await ContentfulOperations.getSingletonEntry(ContentfulModel.CONTACT_DETAILS, ContentfulConverter.convertContactDetails)
+}
+
 export const CMSManager = {
   getCoverPage,
   getExperienceBlocks,
   getTooltip,
   getProjects,
-  getSkillSectionsWithSkills
+  getSkillSectionsWithSkills,
+  getContactDetails
 }
