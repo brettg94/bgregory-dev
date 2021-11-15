@@ -14,6 +14,7 @@ export const ContactPageUI = (props: Props) => {
         <p>Feel free to send me a message at:</p>
         <ContactEmailButton buttonType="PROMPT" contactEmail={props.contactEmail} />
       </div>
+      <p className={styles.copyright}>© Brett Gregory {new Date().getFullYear()}</p>
     </div>
   )
 }

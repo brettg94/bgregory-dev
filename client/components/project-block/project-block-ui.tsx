@@ -18,11 +18,9 @@ export const ProjectBlock = React.memo((props: Props) => {
       )
     } else if (props.primaryImage) {
       return (
-        <LazyLoad height={'400px'} offset={10}>
-          <div className={styles.mediaContainer}>
-            <img className={styles.image} src={props.primaryImage.url} title={props.primaryImage.title} alt={props.primaryImage.description}></img>
-          </div>
-        </LazyLoad>
+        <div className={styles.mediaContainer}>
+          <img className={styles.image} src={props.primaryImage.url} title={props.primaryImage.title} alt={props.primaryImage.description}></img>
+        </div>
       )
     }
     return null

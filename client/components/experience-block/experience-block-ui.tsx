@@ -11,9 +11,7 @@ export const ExperienceBlockUI = React.memo((props: Props) => {
   return (
     <div className={styles.container}>
       <Paper elevation={2} className={styles.paper}>
-        <LazyLoad height={'140px'} offset={10}>
-          <img className={styles.coverImage} src={props.coverImage.url} title={props.coverImage.title} alt={props.coverImage.description}></img>
-        </LazyLoad>
+        <img className={styles.coverImage} src={props.coverImage.url} title={props.coverImage.title} alt={props.coverImage.description}></img>
         <div className={styles.interior}>
           <div className={styles.companyName}>{props.company}</div>
           <div className={styles.locationAndDuration}>

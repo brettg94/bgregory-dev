@@ -6,6 +6,8 @@
   height: 50vh;
   color: $white-text;
   padding: 16px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .header {
@@ -20,4 +22,12 @@
   align-items: center;
   flex-direction: column;
   font-size: $font-size-large;
+}
+
+.copyright {
+  color: $white-text-muted;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
