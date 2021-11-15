@@ -18,6 +18,11 @@
   justify-content: center;
 }
 
+.interior {
+  display: flex;
+  justify-content: center;
+}
+
 .masonryGrid {
   display: flex;
   margin-left: -30px; /* gutter size offset */
