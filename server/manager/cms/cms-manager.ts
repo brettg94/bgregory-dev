@@ -81,8 +81,8 @@ async function getSkillSectionsWithSkills(): Promise<SkillSection[]> {
 
 export type ContactDetails = {
   contactEmail: string
-  gitHub?: string
-  linkedIn?: string
+  gitHubUrl?: string
+  linkedInUrl?: string
 }
 
 async function getContactDetails(): Promise<ContactDetails> {

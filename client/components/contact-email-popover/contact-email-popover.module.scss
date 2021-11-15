@@ -1,0 +1,17 @@
+@import '~constants';
+
+.container {
+  display: block;
+  padding: 16px 16px;
+  font-size: $font-size-large;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: $font-size-normal;
+  }
+}
+
+.icon {
+  margin-right: 8px;
+}

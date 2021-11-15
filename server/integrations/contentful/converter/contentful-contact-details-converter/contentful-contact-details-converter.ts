@@ -3,14 +3,14 @@ import { Entry } from 'contentful'
 
 export type ContentfulContactDetails = {
   contactEmail: string
-  gitHub?: string
-  linkedIn?: string
+  gitHubUrl?: string
+  linkedInUrl?: string
 }
 
 export function convertContactDetails(entry: Entry<ContentfulContactDetails>): ContactDetails {
   return {
     contactEmail: entry.fields.contactEmail,
-    gitHub: entry.fields.gitHub,
-    linkedIn: entry.fields.linkedIn
+    gitHubUrl: entry.fields.gitHubUrl,
+    linkedInUrl: entry.fields.linkedInUrl
   }
 }
