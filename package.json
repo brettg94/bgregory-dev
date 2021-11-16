@@ -9,6 +9,7 @@
     "npm": "^6.13.4"
   },
   "scripts": {
+    "build": "yarn build:server && yarn build:client",
     "build:client": "node --optimize_for_size --gc_interval=100 node_modules/webpack/bin/webpack.js --config config/webpack-client-config.js",
     "build:server": "node node_modules/webpack/bin/webpack.js --config config/webpack-server-config.js",
     "dev:server": "nodemon -r tsconfig-paths/register -e js,ts,tsx server/server-entry.ts --exec ts-node",
