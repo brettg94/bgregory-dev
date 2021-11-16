@@ -11,7 +11,7 @@ import { SkillsPage } from '../skills-page/skills-page-container'
 import { ContactPage } from '../contact-page/contact-page-container'
 import { PageIndex } from '@Client/redux/redux'
 
-type Props = {
+export type Props = {
   highestPageLoaded: number
 }
 
@@ -21,7 +21,7 @@ const defaultLazyLoadProps = {
   resize: true
 }
 
-export const App = (props: Props) => {
+export const AppUI = (props: Props) => {
   React.useEffect(() => {
     console.log('Application loaded')
   }, [])

@@ -16,7 +16,7 @@ const create = (pageIndex: PageIndex): SetHighestPageMounted => ({
 const reduce = reduceOnlyForSpecificAction(SET_HIGHEST_PAGE_MOUNTED, (state: State, action: SetHighestPageMounted): State => {
   return {
     ...state,
-    highestPageMounted: action.pageIndex
+    highestPageMounted: Math.max(action.pageIndex, state.highestPageMounted)
   }
 })
 
