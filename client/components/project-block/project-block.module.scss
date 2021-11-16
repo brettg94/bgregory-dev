@@ -14,24 +14,34 @@
 
 .interior {
   display: flex;
+  flex-direction: column;
   padding: 16px;
 }
 
-.header {
+.headerRow {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.header {
   margin-bottom: 8px;
   text-transform: uppercase;
+  align-self: center;
+  text-align: center;
 }
 
 .linkIcon {
+  vertical-align: middle;
   margin-right: 4px;
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
-  padding-right: 16px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  padding-right: 0px;
+  max-width: auto;
 }
 
 .image {

@@ -34,20 +34,18 @@ export const ProjectBlock = React.memo((props: Props) => {
         </>
       )
     }
-    return <div className={styles.noLinkHeaderTitle}>{props.title}</div>
+    return <span className={styles.noLinkHeaderTitle}>{props.title}</span>
   }
 
   return (
     <div className={styles.container}>
       <Paper elevation={2} className={styles.paper}>
         <div className={styles.interior}>
-          <LazyLoad height={'80px'} offset={10}>
+          <div className={styles.headerRow}>
             <img className={styles.logo} src={props.logo.url} title={props.logo.title} alt={props.logo.description}></img>
-          </LazyLoad>
-          <div>
-            <div className={styles.header}>{getHeader()}</div>
-            <div>{documentToReactComponents(props.description)}</div>
+            <span className={styles.header}>{getHeader()}</span>
           </div>
+          <div>{documentToReactComponents(props.description)}</div>
         </div>
         <hr className={styles.hr} />
         {getImageOrGfycatEmbed()}
