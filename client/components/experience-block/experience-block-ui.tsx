@@ -2,7 +2,6 @@ import React from 'react'
 import { Paper } from '@mui/material'
 import { ExperienceBlock } from '@Server/manager/cms/cms-manager'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import LazyLoad from 'react-lazyload'
 import styles from './experience-block.module.scss'
 
 type Props = ExperienceBlock

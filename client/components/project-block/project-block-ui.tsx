@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, Paper } from '@mui/material'
 import { Project } from '@Server/manager/cms/cms-manager'
-import LazyLoad from 'react-lazyload'
 import LinkIcon from '@mui/icons-material/Link'
 import styles from './project-block.module.scss'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'

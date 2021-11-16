@@ -87,8 +87,7 @@ const config = {
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true,
-              configFile: `${ROOT_DIR}/tsconfig.json`
+              configFile: `${ROOT_DIR}/tsconfig-client.json`
             }
           }
         ]
