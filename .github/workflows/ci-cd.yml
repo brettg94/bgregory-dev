@@ -15,10 +15,26 @@ jobs:
       NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: |
+          echo "::set-output name=dir::$(yarn cache dir)"
+          echo "::set-output name=version::$(yarn -v)"
+
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: yarn install
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            '**/node_modules'
+            '**/.eslintcache'
+          key: ${{ runner.os }}-yarn-${{ steps.yarn-cache-dir-path.outputs.version }}-${{ hashFiles('**/yarn.lock') }}
+
+      - run: yarn install --frozen-lockfile
       - run: yarn build:client
       - run: yarn build:server
 
