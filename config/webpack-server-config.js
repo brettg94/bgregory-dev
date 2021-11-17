@@ -7,7 +7,7 @@ module.exports = {
   entry: './server/server-entry.ts',
   target: 'node',
   mode: process.env.NODE_ENV,
-  devtool: process.env.NODE_ENV === 'production' ? undefined : 'inline-source-map',
+  devtool: 'inline-source-map',
   output: {
     path: `${ROOT_DIR}/dist-server`,
     filename: 'server.js'
