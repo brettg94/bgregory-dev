@@ -52,5 +52,7 @@ jobs:
       - name: Set Production Environment
         if: github.ref == 'refs/heads/master'
         run: echo "HEROKU_ENV=prod" >> $GITHUB_ENV
+      - name: Unshallow Repository
+        run: git fetch --all --unshallow
       - name: Deploy to Heroku
         run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_BASE_NAME-${{ env.HEROKU_ENV }}.git $GITHUB_SHA:master
