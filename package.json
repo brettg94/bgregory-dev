@@ -13,7 +13,8 @@
     "build:client": "node --optimize_for_size --gc_interval=100 node_modules/webpack/bin/webpack.js --config config/webpack-client-config.js",
     "build:server": "node node_modules/webpack/bin/webpack.js --config config/webpack-server-config.js",
     "dev:server": "nodemon -r tsconfig-paths/register -e js,ts,tsx server/server-entry.ts --exec ts-node",
-    "dev:client": "webpack --progress --watch --config ./config/webpack-client-config.js"
+    "dev:client": "webpack --progress --watch --config ./config/webpack-client-config.js",
+    "start": "node ./dist-server/server.js"
   },
   "devDependencies": {
     "@contentful/rich-text-react-renderer": "^15.6.2",
