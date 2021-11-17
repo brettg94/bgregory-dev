@@ -51,6 +51,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Set Production Environment
         if: github.ref == 'refs/heads/master'
-        run: echo "::set-env name=ENVIRONMENT::prod"
+        run: echo "HEROKU_ENV=prod" >> $GITHUB_ENV
       - name: Deploy to Heroku
-        run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_BASE_NAME-$ENVIRONMENT.git $GITHUB_SHA:master
+        run: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_BASE_NAME-${{ env.HEROKU_ENV }}.git $GITHUB_SHA:master
