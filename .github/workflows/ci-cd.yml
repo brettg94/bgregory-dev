@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: |
@@ -49,8 +47,10 @@ jobs:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       HEROKU_APP_BASE_NAME: ${{ secrets.HEROKU_APP_BASE_NAME }}
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Set Production Environment
         if: github.ref == 'refs/heads/master'
         run: echo "HEROKU_ENV=prod" >> $GITHUB_ENV
