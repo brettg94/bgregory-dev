@@ -1,5 +1,7 @@
 require('dotenv').config()
+const webpack = require('webpack')
 const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 const ROOT_DIR = path.resolve(__dirname, '../')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
@@ -17,7 +19,14 @@ module.exports = {
     modules: ['node_modules'],
     plugins: [new TsconfigPathsPlugin()]
   },
-  plugins: [],
+  externals: [nodeExternals()],
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: 'require("source-map-support").install();',
+      raw: true,
+      entryOnly: false
+    })
+  ],
   module: {
     rules: [
       {
