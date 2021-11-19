@@ -9,21 +9,17 @@ import { TooltipModal } from '../tooltip-modal/tooltip-modal-container'
 import { ProjectsPage } from '../projects-page/projects-page-container'
 import { SkillsPage } from '../skills-page/skills-page-container'
 import { ContactPage } from '../contact-page/contact-page-container'
-import { PageIndex } from '@Client/redux/redux'
 
-export type Props = {
-  highestPageLoaded: number
-}
-
-const defaultLazyLoadProps = {
+const defaultLazyLoadProps: LazyLoadProps = {
   height: '100vh',
   offset: -5,
-  resize: true
+  resize: true,
+  once: true
 }
 
-export const AppUI = (props: Props) => {
+export const App = React.memo(() => {
   React.useEffect(() => {
-    console.log('Application loaded')
+    console.log('Application loaded!')
   }, [])
 
   return (
@@ -31,21 +27,18 @@ export const AppUI = (props: Props) => {
       <div className={styles.app}>
         <CoverPage />
         {/* Utilizing the react-lazyload library to defer mounting of components (and thus API calls) that aren't in view */}
-        {conditionallyLazyLoadComponent(<ExperiencePage />, PageIndex.EXPERIENCE_PAGE, props.highestPageLoaded, defaultLazyLoadProps)}
-        {conditionallyLazyLoadComponent(<ProjectsPage />, PageIndex.PROJECTS_PAGE, props.highestPageLoaded, defaultLazyLoadProps)}
-        {conditionallyLazyLoadComponent(<SkillsPage />, PageIndex.SKILLS_PAGE, props.highestPageLoaded, defaultLazyLoadProps)}
+        <LazyLoad {...defaultLazyLoadProps}>
+          <ExperiencePage />
+        </LazyLoad>
+        <LazyLoad {...defaultLazyLoadProps}>
+          <ProjectsPage />
+        </LazyLoad>
+        <LazyLoad {...defaultLazyLoadProps}>
+          <SkillsPage />
+        </LazyLoad>
         <ContactPage />
       </div>
       <TooltipModal />
     </ThemeProvider>
   )
-}
-
-//If the page is loaded where the scroll isn't at the very top, horrible content pop-in with the viewport jumping all over happens.
-//This mitigates that by detecting roughly how far down the user is, and mounting all components behind it if there's an inconsistency detected.
-const conditionallyLazyLoadComponent = (component: JSX.Element, pageIndex: number, highestPageLoaded: number, lazyLoadProps?: LazyLoadProps): JSX.Element => {
-  if (pageIndex < highestPageLoaded) {
-    return component
-  }
-  return <LazyLoad {...lazyLoadProps}>{component}</LazyLoad>
-}
+})

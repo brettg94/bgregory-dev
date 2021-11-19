@@ -22,7 +22,7 @@ export const ProjectsPageUI = React.memo((props: Props) => {
     .map((project) => {
       return <ProjectBlock key={project.title} {...project} />
     })
-
+  console.log('UI rendering')
   return (
     <div className={styles.container}>
       <h2 className={styles.header}>

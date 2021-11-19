@@ -6,21 +6,11 @@ export type State = {
   tooltips: { [key: string]: Tooltip }
   activeTooltipIdentifier?: string
   contactEmail: string
-  highestPageMounted: PageIndex
-}
-
-export const enum PageIndex {
-  COVER_PAGE = 1,
-  EXPERIENCE_PAGE = 2,
-  PROJECTS_PAGE = 3,
-  SKILLS_PAGE = 4,
-  CONTACT_PAGE = 5
 }
 
 export const defaultState: State = {
   tooltips: {},
-  contactEmail: '',
-  highestPageMounted: PageIndex.COVER_PAGE
+  contactEmail: ''
 }
 
 export const createRootReducer = () => {

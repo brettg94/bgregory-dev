@@ -4,14 +4,12 @@ import { ActivateTooltipModalAction } from './activate-tooltip-modal/activate-to
 import { SaveTooltipDataAction } from './save-tooltip-data/save-tooltip-data'
 import { CloseTooltipModalAction } from './close-tooltip-modal/close-tooltip-modal'
 import { SetContactEmailAction } from './set-contact-email/set-contact-email'
-import { SetHighestPageMountedAction } from './set-highest-page-mounted/set-highest-page-mounted'
 
 export const Reducers: Reducer<State>[] = [
   ActivateTooltipModalAction.reduce,
   SaveTooltipDataAction.reduce,
   CloseTooltipModalAction.reduce,
-  SetContactEmailAction.reduce,
-  SetHighestPageMountedAction.reduce
+  SetContactEmailAction.reduce
 ]
 
 /*

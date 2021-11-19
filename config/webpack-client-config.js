@@ -27,7 +27,8 @@ const config = {
     filename: `[name]-[contenthash].js`,
     chunkFilename: '[name]-[contenthash].js',
     path: BUILD_DIR,
-    sourceMapFilename: '[name].js.map'
+    sourceMapFilename: '[name].js.map',
+    clean: true
   },
   devtool: process.env.NODE_ENV !== 'production' ? 'cheap-source-map' : undefined,
   plugins: [
