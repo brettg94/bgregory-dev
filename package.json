@@ -15,6 +15,7 @@
     "cdn-upload": "node ./cdn-upload.js",
     "dev:server": "nodemon -r tsconfig-paths/register -e js,ts,tsx server/server-entry.ts --exec ts-node",
     "dev:client": "webpack --progress --watch --config ./config/webpack-client-config.js",
+    "heroku-postbuild": "./heroku-postbuild.sh",
     "start": "node ./dist-server/server.js"
   },
   "devDependencies": {
