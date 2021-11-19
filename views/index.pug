@@ -1,11 +1,21 @@
 doctype html
 
+- var appleTouchIcon = `${cdnUrl}/apple-touch-icon.png`
+- var favicon32 = `${cdnUrl}/favicon-32x32.png`
+- var favicon16 = `${cdnUrl}/favicon-16x16.png`
+- var maskIcon = `${cdnUrl}/safari-pinned-tab.svg`
+
 html
     head
-        title Brett G - Full Stack Dev
+        title bgregory: Full Stack Dev
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
         meta(name="description" content="Brett's interactive resume and portfolio site.")
+
+        link(rel="apple-touch-icon" sizes="180x180" href=appleTouchIcon)
+        link(rel="icon" type="image/png" sizes="32x32" href=favicon32)
+        link(rel="icon" type="image/png" sizes="16x16" href=favicon16)
+        link(rel="mask-icon" href=maskIcon color="#5bbad5")
 
         link(href=cssRoot rel="stylesheet")
 

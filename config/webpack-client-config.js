@@ -4,11 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BUILD_DIR = path.resolve(__dirname, '../dist/public')
 const APP_DIR = path.resolve(__dirname, '../client')
 const ROOT_DIR = path.resolve(__dirname, '../')
+const ASSETS_DIR = path.resolve(__dirname, '../assets')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const FileManagerPlugin = require('filemanager-webpack-plugin')
 
 const config = {
   mode: process.env.NODE_ENV,
@@ -37,7 +39,16 @@ const config = {
       chunkFilename: '[name]-[contenthash].css',
       ignoreOrder: false
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    //Takes any static assets stored in the .assets directory (mainly used for favicons and such)
+    //Puts them into the dist directory so they can be served
+    new FileManagerPlugin({
+      events: {
+        onEnd: {
+          copy: [{ source: ASSETS_DIR + '/*.*', destination: BUILD_DIR }]
+        }
+      }
+    })
   ],
   resolve: {
     extensions: ['.mjs', '.cjs', '.web.js', '.ts', '.tsx', '.js', '.scss'],
@@ -104,7 +115,7 @@ const config = {
             options: {
               prefix: 'img/',
               name: 'img-[contenthash].[ext]',
-              publicPath: process.env.CDN_URL && process.env.SERVE_ASSETS_FROM_CDN ? process.env.CDN_URL : '/'
+              publicPath: process.env.CDN_URL ? process.env.CDN_URL : '/'
             }
           }
         ]

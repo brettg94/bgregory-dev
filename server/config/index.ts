@@ -16,7 +16,10 @@ const development: ServerEnvironmentConfig = {
   httpsEnforcer: ExpressMiddleware.pass
 }
 
+function getConfig(env: string | undefined) {
+  return env === 'production' ? production : development
+}
+
 export const ServerEnvironmentConfig = {
-  production,
-  development
+  getConfig
 }
