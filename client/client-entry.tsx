@@ -15,7 +15,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk))
 const store = createStore(createRootReducer(), enhancer)
 
 //The browser's scroll restoration introduces a lot of complexities with lazy-loaded components
-//Certainly not the greatest solution here -- but for a portfolio website, I'm content to just start at the top of the screen.
+//Certainly not the greatest solution here -- but for a portfolio website, I'm content to just restart at the top of the screen if the user refreshes from a non-zero Y scroll position.
 //In the future, it may be a good idea to utilize the browser's local storage to store the last visited page index, and then manually restore the session from that spot upon page refresh.
 window.history.scrollRestoration = 'manual'
 
