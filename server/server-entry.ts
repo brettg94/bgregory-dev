@@ -6,6 +6,7 @@ import path from 'path'
 import { ServerEnvironmentConfig } from './config'
 import { contentRouter } from './controller/content/content-controller'
 import { CONTENT_ENDPOINT } from './endpoints'
+import { RobotsTxtMetaHandler } from './meta/robots-txt/robots-txt'
 
 const app = express()
 const router = express.Router()
@@ -26,6 +27,8 @@ export function startServer(config: ServerEnvironmentConfig) {
   app.use('*', config.httpsEnforcer)
 
   app.use(express.static('./dist/public'))
+
+  app.get(RobotsTxtMetaHandler.robotsTxtUrl, RobotsTxtMetaHandler.serveRobotsTxt)
 
   app.set('view engine', 'pug')
   app.set('views', path.resolve('.') + '/views')
